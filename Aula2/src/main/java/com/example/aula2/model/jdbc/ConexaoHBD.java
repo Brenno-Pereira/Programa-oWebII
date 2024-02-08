@@ -13,14 +13,14 @@ public class ConexaoHBD implements ConexaoJDBC{
             //carregar o driver de conexão
             Class.forName("org.h2.Driver");
             //parâmetros
-            String url = "jdbc:h2:mem:bdweb";
+            String url = "jdbc:h2:~/banco/bdweb";
             String usuario = "sa";
             String senha = "";
             //retorna a conexão com o banco de dados
             return DriverManager.getConnection(url, usuario, senha);
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ConexaoPostgre.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ConexaoHBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
